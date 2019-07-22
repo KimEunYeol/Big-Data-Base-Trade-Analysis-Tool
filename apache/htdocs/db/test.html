@@ -1,0 +1,55 @@
+<html>
+<head>
+  <script src="./js/d3.v3.min.js"></script>
+  <script src="./js/d3.layout.cloud.js"></script>
+</head>
+<body>
+  <script>
+var words = [
+    {text: 'out', size: 1.0},
+    {text: 'just', size: 0.848167539267},
+    {text: 'your', size: 0.82722513089},
+    {text: 'not', size: 0.759162303665},
+    {text: 'have', size: 0.685863874346},
+    {text: 'today', size: 0.638743455497},
+    {text: 'hai', size: 0.623036649215},
+    {text: 'eventbrite', size: 0.591623}
+];
+      d3.layout.cloud()
+        .size([600, 600])
+//        .words(words
+//          .map(function(d) { return {text: d[0], size: d[1]*100}; }))
+         .words(words)
+//          .padding(5)
+          .rotate(function() { return ~~(Math.random() * 0) * 90; })
+          .font('Impact')
+          .fontSize(function(d) { return d.size; })
+          .on('end', draw)
+          .start();
+
+function draw(words) {
+  var solidFill = d3.scale.category10();
+  var mixedFill = d3.scale.category20();
+      d3.select('body').append('svg')
+        .attr('width', 600)
+        .attr('height', 600)
+        .attr('class', 'wordcloud')
+        .append('g')
+        .attr('transform', 'translate(300, 300)')
+        .selectAll('text')
+        .data(words)
+        .enter().append('text')
+        .style('font-size', function(d) { return d.size + 'px'; })
+        .style('font-family', 'Impact')
+        .style('fill', function(d, i) {
+          if(d.size > 50) return solidFill(i);
+          else return mixedFill(i);
+        })
+//        .style('fill', function(d,i) { return fill(i); })
+        .attr('text-anchor', 'middle')
+        .attr('transform', function(d) { return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'})
+        .text(function(d) { return d.text; });
+};
+  </script>
+</body>
+</html>

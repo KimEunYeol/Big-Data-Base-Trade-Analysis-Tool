@@ -1,0 +1,26 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "no desc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jbshin",
+  "repository": "",
+  "license": "ISC",
+  "package": true,
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.17.2",
+    "config": "^1.26.1",
+    "csv-parser": "^1.11.0",
+    "express": "^4.15.3",
+    "http": "0.0.0",
+    "mysql": "^2.13.0",
+    "r-script": "0.0.3",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.3",
+    "twitter": "^1.7.0"
+  }
+}

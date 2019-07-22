@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+  <title>Dashboard</title>
+
+  <script src="./js/gmedal.js"></script>
+  <script type="text/javascript">
+    if(sessionStorage.getItem("user_id"))
+      location.href = 'index.html';
+  </script>
+
+  <script src='https://www.google.com/recaptcha/api.js?hl=ko'></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">창업's</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--
+        <ul class="nav navbar-nav">
+          <li>Dashboard</li>
+        </ul>
+-->
+        <ul class="nav navbar-nav navbar-right">
+<!--
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span class="glyphicon glyphicon-edit"></span> 관심정보 수정
+            </a>
+          </li>
+-->
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span class="glyphicon glyphicon-log-in"></span> 로그인
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <form>
+      <div class="form-group">
+        <label for="username">아이디</label>
+        <input id="username" class="form-control" type="text"/>
+      </div>
+      <div class="form-group">
+        <label for="password">비밀번호</label>
+        <input id="password" class="form-control" type="password"/>
+      </div>
+
+      <div class="g-recaptcha" data-sitekey="6LfmzCgUAAAAADFk8LeuSFQv8_f-b72GYsMtutUS" data-callback="captchaCallback"></div>
+
+      <div align="right">
+        <input class="btn btn-primary btn-sm" id="login" type="submit" value="로그인"/>
+      </div>
+      <div align="center">
+        회원이 아니신가요?
+        <button class="btn btn-default btn-sm" id="join">회원가입</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

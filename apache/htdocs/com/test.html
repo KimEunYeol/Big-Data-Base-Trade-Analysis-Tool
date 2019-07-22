@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./jquery.zoom.min.js"></script>
+  <script>
+    $(function() {
+/*
+      $('#bg')
+        .wrap('<span style="display: inline-block"></span>')
+        .css('display', 'block')
+        .parent()
+        .zoom();
+*/
+      $('#bg').zoom();
+    });
+  </script>
+  <style>
+    .zoom {
+      display: inline-block;
+      position: relative;
+    }
+    .zoom:after {
+      content: '';
+      display: block;
+      width: 33px;
+      height: 33px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: url('temp.gif');
+    }
+    .zoom img {
+      display: block;
+    }
+    .zoom img::selection {
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <img id="bg" src="temp.gif"/>
+</body>
+</html>

@@ -1,0 +1,19 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--enable-module=so" \
+"--enable-mods-shared=most" \
+"--enable-maintainer-mode" \
+"--enable-deflate" \
+"--enable-headers" \
+"--enable-rewrite" \
+"--enable-ssl" \
+"--enable-proxy" \
+"--enable-proxy-http" \
+"--enable-proxy-ajp" \
+"--enable-proxy-balance" \
+"--with-pcre=/usr/local/pcre" \
+"--prefix=/usr/local/apache" \
+"$@"

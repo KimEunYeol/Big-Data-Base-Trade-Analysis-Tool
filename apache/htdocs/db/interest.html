@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+  <title>Dashboard</title>
+
+  <script src="./js/gmedal.js"></script>
+  <script type="text/javascript">
+    if(!sessionStorage.getItem("user_id"))
+      location.href = 'index.html';
+  </script>
+  <script typs="text/javascript" src="./data/cityObj.json"></script>
+  <script typs="text/javascript" src="./data/categoryObj.json"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">창업's</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--
+        <ul class="nav navbar-nav">
+          <li>Dashboard</li>
+        </ul>
+-->
+        <ul class="nav navbar-nav navbar-right">
+<!--
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span class="glyphicon glyphicon-edit"></span> 관심정보 수정
+            </a>
+          </li>
+-->
+          <li class="nav-item">
+            <a class="nav-link" id="logout" href="#">
+              <span class="glyphicon glyphicon-log-out"></span> 로그아웃
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+
+
+    <form>
+      <div class="form-group">
+        <label for="intWide">관심지역</label>
+        <div class="alert alert-info">
+          <strong>IP에서 가져온 지역 정보</strong>입니다.
+        </div>
+	<select class="form-control" name="intWide" id="intWide">
+          <option value="서울특별시">서울특별시</option>
+          <option value="부산광역시">부산광역시</option>
+<option value="대구광역시">대구광역시</option>
+<option value="인천광역시">인천광역시</option>
+<option value="광주광역시">광주광역시</option>
+<option value="대전광역시">대전광역시</option>
+<option value="울산광역시">울산광역시</option>
+<option value="세종특별자치시">세종특별자치시</option>
+<option value="경기도">경기도</option>
+<option value="강원도">강원도</option>
+<option value="충청북도">충청북도</option>
+<option value="충청남도">충청남도</option>
+<option value="전라북도">전라북도</option>
+<option value="전라남도">전라남도</option>
+<option value="경상북도">경상북도</option>
+<option value="경상남도">경상남도</option>
+<option value="제주특별자치도">제주특별자치도</option>
+        </select>
+        <select class="form-control" name="intCity" id="intCity">
+          <option value="강남구">강남구</option>
+          <option value="강동구">강동구</option>
+          <option value="강북구">강북구</option>
+          <option value="강서구">강서구</option>
+          <option value="관악구">관악구</option>
+          <option value="광진구">광진구</option>
+          <option value="구로구">구로구</option>
+          <option value="금천구">금천구</option>
+          <option value="노원구">노원구</option>
+          <option value="도봉구">도봉구</option>
+          <option value="동대문구">동대문구</option>
+          <option value="동작구">동작구</option>
+          <option value="마포구">마포구</option>
+          <option value="서대문구">서대문구</option>
+          <option value="서초구">서초구</option>
+          <option value="성동구">성동구</option>
+          <option value="성북구">성북구</option>
+          <option value="송파구">송파구</option>
+          <option value="양천구">양천구</option>
+          <option value="영등포구">영등포구</option>
+          <option value="용산구">용산구</option>
+          <option value="은평구">은평구</option>
+          <option value="종로구">종로구</option>
+          <option value="중랑구">중랑구</option>
+        </select>
+      </div>
+<!--
+        <tr>
+          <td>
+            관심지역(트위터)
+          </td>
+          <td colspan="2">
+            <select name="intTwt" id="intTwt" style="width: 333px">
+              <option value="고양">고양</option>
+              <option value="광주">광주</option>
+              <option value="대구">대구</option>
+              <option value="대전">대전</option>
+              <option value="부산">부산</option>
+              <option value="부천">부천</option>
+              <option value="서울" selected="selected">서울</option>
+              <option value="성남">성남</option>
+              <option value="수원">수원</option>
+              <option value="안산">안산</option>
+              <option value="용인">용인</option>
+              <option value="울산">울산</option>
+              <option value="인천">인천</option>
+              <option value="창원">창원</option>
+            </select>
+          </td>
+        </tr>
+-->
+      <div class="form-group">
+        <label for="intCategory">관심업종</label>
+        <select class="form-control" name="intCategory1" id="intCategory1">
+              <option vale="1차산업">1차산업</option>
+              <option vale="관광/여가/오락">관광/여가/오락</option>
+              <option vale="교통/운송">교통/운송</option>
+              <option vale="국가기관/단체">국가기관/단체</option>
+              <option vale="금융">금융</option>
+              <option vale="기술/건축/환경">기술/건축/환경</option>
+              <option vale="도매/유통/무역">도매/유통/무역</option>
+              <option vale="부동산">부동산</option>
+              <option vale="생활서비스">생활서비스</option>
+              <option vale="소매">소매</option>
+              <option vale="숙박">숙박</option>
+              <option vale="스포츠">스포츠</option>
+              <option vale="언론/미디어">언론/미디어</option>
+              <option vale="음식">음식</option>
+              <option vale="의료">의료</option>
+              <option vale="전기/가스/수도">전기/가스/수도</option>
+              <option vale="전자/정보통신">전자/정보통신</option>
+              <option vale="제조">제조</option>
+              <option vale="학문/교육">학문/교육</option>
+        </select>
+        <select class="form-control" name="intCategory2" id="intCategory2">
+          <option vale="조경">조경</option>
+        </select>
+      </div>
+      <div align="right">
+            <input class="btn btn-primary btn-sm" id="interestSubmit" type="submit" value="정보수정"/>
+      </div>
+    </form>
+
+</div>
+			  </div>
+
+</body>
+
+</html>

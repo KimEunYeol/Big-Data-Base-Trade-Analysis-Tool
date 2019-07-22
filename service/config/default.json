@@ -1,0 +1,19 @@
+{
+  "mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "apekf",
+    "database": "gmedal"
+  },
+  "mongodb": {
+    "host": "localhost",
+    "port": 27017
+  },
+  "twitter": {
+    "consumer_key": "F6ktencbjBGjfnFpJmVRAa6dz",
+    "consumer_secret": "DRN5jyUK23z8bgovs97NiGxDpLhWsdUvmgxRZut5GOrxnXJFt7",
+    "access_token_key": "868337703770652672-YPmKiVUvcrqapa92YswXpHTXtGU1Blh",
+    "access_token_secret": "RQnOrfJSmEmoanQgNBe19HhxmAgOqgS2ANx35GkWieam9"
+  }
+}
